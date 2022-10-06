@@ -109,7 +109,6 @@ function getTodosFromStorage(){
     todos=JSON.parse(localStorage.getItem("todos"));
     return todos;
 }
-HEAD
 function addTodoToStorage(newTodo){ 
     let todos=getTodosFromStorage();
     todos.push(newTodo); 
