@@ -21,6 +21,7 @@ function eventListeners(){
 function addTodo(e){
     let todos = getTodosFromStorage();
     const newTodo = todoInput.value.trim() 
+
     if(newTodo === ""){
         showAlert("danger","Lütfen bir to-do giriniz.");
     }
@@ -40,6 +41,7 @@ function showAlert(type,message){
     alert.className=`alert alert-${type}`;
     alert.textContent=`${message}`;
     firstCardBody.appendChild(alert);  
+
 
     setTimeout(function(){
         alert.remove();        
@@ -101,11 +103,13 @@ function getTodosFromStorage(){
     let todos;
     if(localStorage.getItem("todos")===null){
         todos=[]; 
+
     }
     else
     todos=JSON.parse(localStorage.getItem("todos"));
     return todos;
 }
+HEAD
 function addTodoToStorage(newTodo){ 
     let todos=getTodosFromStorage();
     todos.push(newTodo); 
@@ -125,5 +129,6 @@ function addTodoToUI(newTodo){
 
     todoList.appendChild(listItem);     
     todoInput.value="";      
+
 
 }
